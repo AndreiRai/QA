@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 public class SignInPageTest extends TestBase {
 
-
     @BeforeSuite
     public void setUpInternal(){
         super.url="https://cloudrein.com/newapp#/sign-in";
@@ -17,6 +16,7 @@ public class SignInPageTest extends TestBase {
     //test1
     @Test
     public void headerTest() throws Exception {
+        logger.info("headerTest");
         WebElement tag = driver.findElement(By.tagName("h1"));
         Assert.assertEquals(tag.getText(),"Sign In to your Account");
     }
@@ -37,6 +37,7 @@ public class SignInPageTest extends TestBase {
 
     @Test
     public void signInIsEnabledTest() {
+        logger.info("starting to test sign in is enabled.");
         WebElement emailField = findByXPath("//input[@placeholder=\"Email\"]");
         emailField.click();
         emailField.clear();
@@ -57,8 +58,8 @@ public class SignInPageTest extends TestBase {
         WebElement signInButton = findByXPath("//button[@type=\"submit\"]");
 
         Assert.assertFalse(signInButton.isEnabled());
-
-    }/**/
+        logger.info("finished signInIsEnabledTest.");
+    }
 
     @Test
     public void correctCredentialsTest() {

@@ -1,14 +1,17 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends TestBase{
-
-
+Logger logger= LoggerFactory.getLogger(TestBase.class);
+// logging to HPTest.2
+    //1 logger.
     @BeforeSuite
     public void setUpInternal(){
         super.url="https://cloudrein.com/newapp#/backups";
